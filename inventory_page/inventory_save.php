@@ -9,7 +9,7 @@ $inv_unit   = $_POST['inv_unit'];
 $inv_price  = $_POST['inv_price'];
 
 
-$inv_image_name = ''; //ใช้เป็นค่าว่างก่อน เพราะยังไม่รู้ว่าจะใช้รูปไหน
+$inv_image_name = ''; 
 
 if (!empty($_FILES['inv_image']['name'])) { //หากเลือกรูปใหม่ให้ทำการอัพโหลดรูปภาพ ถ้าไม่ก็ใช้รูปเดิม
 
