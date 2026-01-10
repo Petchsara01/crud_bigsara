@@ -15,7 +15,7 @@ include '../connect.php';
 </head>
 
 <body>
-    <div class="card card-primary">
+    <div class="container mt-5 card card-primary">
         <div class="card-header">
             <h3 class="card-title">กรอกข้อมูลรายการสินค้า</h3>
         </div>
@@ -79,13 +79,16 @@ include '../connect.php';
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary">ยืนยันเพิ่มรายการ</button>
+                <button type="submit"  class="btn btn-primary">ยืนยันเพิ่มรายการ</button>
                 <a href="inventory_list.php" class="btn btn-secondary">ยกเลิก</a>
             </div>
         </form>
     </div>
 
 </body>
+
+
+
 <script>
     let imageInput = document.getElementById('imageInput');
     let previewImage = document.getElementById('previewImage');

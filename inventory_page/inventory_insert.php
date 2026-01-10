@@ -51,6 +51,7 @@ $conn = mysqli_connect(
     $password,
     $dbname
 );
+
 if (!$conn) {
     die("error" . mysqli_connect_error());
 }

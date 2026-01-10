@@ -12,10 +12,11 @@ include '../connect.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-    <div class="card card-primary">
+    <div class="container mt-5 card card-primary">
         <div class="card-header">
             <h3 class="card-title">แก้ไขข้อมูลรายการสินค้า</h3>
         </div>
@@ -47,7 +48,7 @@ include '../connect.php';
                         <br>
                         <div class="form-group">
                             <label for="inv_name" class="fw-bold">ชื่อสินค้า</label>
-                            <input type="text" class="form-control" name="inv_name" id="input_inv_name"  value='<?php echo $row["inv_name"]; ?>'>
+                            <input type="text" class="form-control" name="inv_name" id="input_inv_name" value='<?php echo $row["inv_name"]; ?>'>
                         </div>
                         <br>
                         <div class="form-group">
@@ -66,12 +67,12 @@ include '../connect.php';
                         <br>
                         <div class="form-group">
                             <label for="inv_unit" class="fw-bold">หน่วยนับ</label>
-                            <input type="text" class="form-control" name="inv_unit" id="input_inv_unit"  value='<?php echo $row["inv_unit"]; ?>'>
+                            <input type="text" class="form-control" name="inv_unit" id="input_inv_unit" value='<?php echo $row["inv_unit"]; ?>'>
                         </div>
                         <br>
                         <div class="form-group">
                             <label for="inv_price" class="fw-bold">ราคาขาย</label>
-                            <input type="number" class="form-control" name="inv_price" id="input_inv_price"  value='<?php echo $row["inv_price"]; ?>'>
+                            <input type="number" class="form-control" name="inv_price" id="input_inv_price" value='<?php echo $row["inv_price"]; ?>'>
                         </div>
 
                     </div>
