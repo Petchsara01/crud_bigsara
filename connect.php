@@ -1,5 +1,4 @@
 <?php
-//ใช้สำหรับเชื่อมต่อฐานข้อมูล
 $servername = "localhost";
 $username = "root";
 $password = "";

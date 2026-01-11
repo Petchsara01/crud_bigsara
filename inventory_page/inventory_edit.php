@@ -12,32 +12,43 @@ include '../connect.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+     <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
 
 <body>
-    <div class="container mt-5 card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">แก้ไขข้อมูลรายการสินค้า</h3>
+    <div class=" m-5 card card-primary">
+        <div class="card-header bg-warning">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3 class="card-title">ฟอร์มแก้ไขรายการสินค้า <i class="bi bi-pencil"></i></h3>
+                <div class="d-flex">
+                    <a class="p text-decoration-none text-dark" href="inventory_list.php">รายการสินค้าทั้งหมด</a>
+                    &nbsp;
+                    <p class="text-dark">/</p>
+                    &nbsp;
+                    <p class="text-dark">ฟอร์มแก้ไขรายการสินค้า <i class="bi bi-pencil"></i></p>
+
+                </div>
+            </div>
         </div>
         <?php
         include "../connect.php";
-        $inv_id = $_GET["inv_id"]; //ใช้บอกว่า “กำลังแก้ไขสินค้าชิ้นไหน”
+        $inv_id = $_GET["inv_id"];
         $conn = mysqli_connect($servername, $username, $password, $dbname);
         if (!$conn) {
             die("error" . mysqli_connect_error());
         }
-        // ดึงข้อมูล สินค้า 1 รายการ ที่มี inv_id ตรงกับที่ส่งมา
+
         $sql = "SELECT * FROM inventory WHERE inv_id='$inv_id'";
         $result = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_assoc($result);  //ใช้ดึงข้อมูลจากผลลัพธ์ SQLทีละ 1 แถวในรูปแบบ array ที่อ้างอิงด้วยชื่อคอลัมน์
+        $row = mysqli_fetch_assoc($result);
         ?>
         <form action="inventory_save.php" method="post" enctype="multipart/form-data">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="form-group ">
-                            <label for="inv_id" class="fw-bold">ลำดับ</label>
+                        <div class="form-group " hidden>
+                            <label for="inv_id" class="fw-bold   ">ลำดับ</label>
                             <input type="text" readonly class="form-control" name="inv_id" id="input_inv_id" value='<?php echo $row["inv_id"]; ?>'>
                         </div>
                         <br>
